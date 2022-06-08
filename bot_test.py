@@ -25,7 +25,7 @@ def main():
     TOKEN = "5438627941:AAF2qdXdkhzZTrn0yb-pSOvKgTiJRiOHsos"
 
     # create the updater, that will automatically create also a dispatcher and a queue to
-    # make them dialoge
+    # make them dialogue
     updater = Updater(TOKEN, use_context=True)
     dispatcher = updater.dispatcher
 
@@ -41,6 +41,7 @@ def main():
 
     # run the bot until Ctrl-C
     updater.idle()
+
 
 if __name__ == '__main__':
     main()
