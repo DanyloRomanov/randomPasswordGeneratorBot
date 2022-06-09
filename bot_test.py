@@ -2,7 +2,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from password_generator import generate_secure_password
 import os
 
-PORT = int(os.environ.get('PORT', 8443))
+PORT = int(os.environ.get('PORT', '8443'))
 
 
 # function to handle the /start command
