@@ -1,5 +1,8 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from password_generator import generate_secure_password
+import os
+
+PORT = int(os.environ.get('PORT', 5000))
 
 
 # function to handle the /start command
@@ -37,7 +40,11 @@ def main():
     dispatcher.add_handler(MessageHandler(Filters.text, text))
 
     # start your shiny new bot
-    updater.start_polling()
+    # updater.start_polling()
+    updater.start_webhook(listen='0.0.0.0',
+                          port=int(PORT),
+                          url_path=TOKEN)
+    updater.bot.setWebhook(f'https://shielded-hamlet-79363.herokuapp.com/{TOKEN}')
 
     # run the bot until Ctrl-C
     updater.idle()
