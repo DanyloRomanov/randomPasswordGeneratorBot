@@ -2,7 +2,6 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import os
 import random
 import string
-import pyperclip
 
 PORT = int(os.environ.get('PORT', '8443'))
 
@@ -30,8 +29,6 @@ def generate(update, context):
     update.message.reply_text('You new secure password is:')
     password = generate_secure_password()
     update.message.reply_text(password)
-    pyperclip.copy(password)
-    update.message.reply_text('your password is copied to clipboard, you can paste it right away')
 
 
 def help(update, context):
