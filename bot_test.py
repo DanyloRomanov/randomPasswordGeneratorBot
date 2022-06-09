@@ -33,9 +33,9 @@ def generate(update, context):
 
 def help(update, context):
     first_name = update.message.chat.first_name
-    update.message.reply_text(f'''Hi {first_name}, nice to meet you!\n
-    This bot can help you to generate password
-    Type /g and hit enter''')
+    update.message.reply_text(f'''Hey {first_name}!\n
+This bot can help you to generate password
+Type /g and hit enter''')
 
 
 # function to handle normal text
