@@ -30,10 +30,17 @@ def generate(update, context):
     update.message.reply_text(f'You new secure password is {generate_secure_password()}')
 
 
+def help(update, context):
+    first_name = update.message.chat.first_name
+    update.message.reply_text(f'''Hi {first_name}, nice to meet you!\n
+    This bot can help you to generate password
+    Type /g and hit enter''')
+
+
 # function to handle normal text
 def text(update, context):
     text_received = update.message.text
-    update.message.reply_text(f'did you say "{text_received}" ?')
+    update.message.reply_text(f'You said "{text_received}",I support only one command /g')
 
 
 def main():
@@ -46,6 +53,7 @@ def main():
 
     # add handlers for start and help commands
     dispatcher.add_handler(CommandHandler("start", start))
+    dispatcher.add_handler(CommandHandler("help", help))
     dispatcher.add_handler(CommandHandler("g", generate))
 
     # add an handler for normal text (not commands)
