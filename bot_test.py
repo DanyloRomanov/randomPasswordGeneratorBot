@@ -43,8 +43,8 @@ def main():
     # updater.start_polling()
     updater.start_webhook(listen='0.0.0.0',
                           port=int(PORT),
-                          url_path=TOKEN)
-    updater.bot.setWebhook(f'https://shielded-hamlet-79363.herokuapp.com/{TOKEN}')
+                          url_path=TOKEN,
+                          webhook_url=f'https://shielded-hamlet-79363.herokuapp.com/{TOKEN}')
 
     # run the bot until Ctrl-C
     updater.idle()
