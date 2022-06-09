@@ -33,7 +33,7 @@ def generate(update, context):
 # function to handle normal text
 def text(update, context):
     text_received = update.message.text
-    update.message.reply_text(f'did you said "{text_received}" ?')
+    update.message.reply_text(f'did you say "{text_received}" ?')
 
 
 def main():
