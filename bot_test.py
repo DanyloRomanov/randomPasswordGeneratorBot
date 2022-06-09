@@ -29,7 +29,7 @@ def main():
 
     # create the updater, that will automatically create also a dispatcher and a queue to
     # make them dialogue
-    updater = Updater(TOKEN, use_context=True)
+    updater = Updater(TOKEN)
     dispatcher = updater.dispatcher
 
     # add handlers for start and help commands
